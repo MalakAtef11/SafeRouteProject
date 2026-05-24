@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Tajawal:wght@300;400;500;700&display=swap');
+
+:root {
+  --bg-color: #f4f7fc;
+  --surface: #ffffff;
+  --stone: #e2e8f0;
+  --ink: #1e293b;
+  --ink2: #334155;
+  --muted: #64748b;
+  
+  --blue: #0071e3;
+  --blue2: #005bb5;
+  --sky: #e6f2ff;
+  --red: #ef4444;
+
+  --r-sm: 10px;
+  --r-md: 18px;
+  --r-lg: 28px;
+  --r-xl: 40px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { background-color: var(--bg-color); color: var(--ink); font-family: 'Tajawal', sans-serif; overflow-x: hidden; }
+
+.auth-container { min-height: 100vh; display: flex; flex-direction: column; }
+
+/* ════════════════════════════════════
+   MAIN AUTH SECTION (Split Screen)
+════════════════════════════════════ */
+.auth-main {
+  flex: 1;
+  display: flex;
+  width: 100%;
+  min-height: 100vh; 
+}
+
+/* ── القسم الأيمن (الفورم + الفوتر) ── */
+.auth-right-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 120px 5% 20px; 
+  background: var(--bg-color);
+}
+
+.auth-card-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* 🔥 التعديل الأول: إزالة المربع الأبيض ليصبح شفاف ومدمج */
+.auth-card {
+  width: 100%;
+  max-width: 450px;
+  background: transparent; /* صار شفاف */
+  padding: 20px 0;
+  border: none; /* شلنا الحدود */
+  box-shadow: none; /* شلنا الظل */
+}
+
+/* Tabs */
+.tabs-container { display: flex; background: rgba(0,0,0,0.04); padding: 6px; border-radius: 99px; margin-bottom: 35px; }
+.tab-btn {
+  flex: 1; padding: 12px; border: none; background: transparent; border-radius: 99px;
+  font-weight: 700; color: var(--muted); cursor: pointer; transition: 0.3s; font-family: 'Tajawal'; font-size: 15px;
+}
+.tab-btn.active { background: var(--surface); color: var(--blue); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+
+/* Social Buttons */
+.social-login-group { display: flex; flex-direction: column; gap: 15px; margin-bottom: 25px; align-items: center;}
+.google-btn-wrapper { display: flex; justify-content: center; width: 100%; }
+.btn-social {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 14px; border-radius: 99px; font-weight: 700; font-family: 'Tajawal'; font-size: 15px;
+  border: 1px solid var(--stone); background: var(--surface); color: var(--ink); cursor: pointer; transition: 0.3s; width: 100%;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+.btn-facebook { color: #1877F2; }
+.btn-social:hover { transform: translateY(-2px); box-shadow: 0 8px 15px rgba(0,0,0,0.05); }
+
+/* 🔥 التعديل الثاني: إصلاح خط (أو باستخدام البريد) عشان ما يقطع الكلمة */
+.divider { 
+  display: flex; 
+  align-items: center; 
+  margin: 25px 0; 
+  width: 100%; 
+}
+.divider::before, .divider::after { 
+  content: ""; 
+  flex: 1; 
+  height: 1px; 
+  background: var(--stone); 
+}
+.divider span { 
+  padding: 0 15px; 
+  color: var(--muted); 
+  font-size: 13px; 
+  font-weight: 700; 
+  background: transparent; 
+}
+
+/* Forms */
+.auth-form { display: flex; flex-direction: column; gap: 20px; width: 100%; }
+.form-row { display: flex; gap: 15px; }
+.form-row .input-group { flex: 1; }
+
+.input-group { width: 100%; text-align: start; }
+.input-group label { display: block; font-weight: 700; color: var(--ink); margin-bottom: 8px; font-size: 14px; }
+
+/* المربعات الشفافة */
+.input-group input, .input-group select {
+  width: 100%; padding: 14px 18px; border: 1.5px solid var(--stone); border-radius: 12px;
+  background: transparent; font-family: 'Tajawal'; font-size: 15px; color: var(--ink); transition: 0.3s; outline: none;
+}
+.input-group input:focus, .input-group select:focus { 
+  border-color: var(--blue); 
+  background: transparent; 
+  box-shadow: 0 0 0 3px var(--sky); 
+}
+
+/* Submit Button */
+.btn-submit {
+  width: 100%; padding: 16px; border: none; border-radius: 99px;
+  background: var(--blue); color: white; font-weight: 800; font-size: 16px;
+  font-family: 'Tajawal'; cursor: pointer; box-shadow: 0 10px 25px rgba(0, 113, 227, 0.3); transition: 0.3s; margin-top: 10px;
+}
+.btn-submit:hover:not(:disabled) { background: var(--blue2); transform: translateY(-2px); box-shadow: 0 15px 35px rgba(0, 113, 227, 0.4); }
+.btn-submit:disabled { background: #94a3b8; cursor: not-allowed; box-shadow: none; }
+
+/* ── React Datepicker Custom ── */
+.custom-datepicker-wrapper { position: relative; width: 100%; display: flex; }
+.custom-datepicker {
+  width: 100% !important; padding: 14px 18px !important; border: 1.5px solid var(--stone) !important;
+  border-radius: 12px !important; background: transparent !important; font-family: 'Tajawal', sans-serif !important;
+  font-size: 15px !important; color: var(--ink) !important; transition: 0.3s !important; outline: none !important;
+  text-align: start !important;
+}
+.custom-datepicker:focus { border-color: var(--blue) !important; box-shadow: 0 0 0 3px var(--sky) !important; }
+.react-datepicker {
+  font-family: 'Tajawal', sans-serif !important; border: 1px solid var(--stone) !important;
+  border-radius: 12px !important; box-shadow: 0 10px 40px rgba(0,0,0,0.1) !important; background-color: var(--surface) !important;
+}
+.react-datepicker__header { background-color: var(--bg-color) !important; border-bottom: 1px solid var(--stone) !important; border-top-left-radius: 12px !important; border-top-right-radius: 12px !important; }
+.react-datepicker__current-month, .react-datepicker-time__header, .react-datepicker-year-header { color: var(--ink) !important; }
+.react-datepicker__day-name, .react-datepicker__day, .react-datepicker__time-name { color: var(--ink) !important; }
+.react-datepicker__day:hover { background-color: var(--sky) !important; border-radius: 50% !important; }
+.react-datepicker__day--selected { background-color: var(--blue) !important; color: #fff !important; border-radius: 50% !important; }
+
+/* ── القسم الأيسر (الفاتح والمريح للعين) ── */
+.auth-left-panel {
+  flex: 1.1;
+  background: var(--sky); 
+  display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
+  padding: 100px 8% 60px; position: relative; overflow: hidden;
+}
+
+.auth-left-panel::before {
+  content: ''; position: absolute; top: -150px; left: -150px; width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(0, 113, 227, 0.08) 0%, transparent 70%); border-radius: 50%; pointer-events: none;
+}
+
+.auth-left-content { position: relative; z-index: 2; max-width: 500px; text-align: right; margin-left: auto;}
+
+.badge-soft {
+  display: inline-flex; align-items: center; gap: 8px; background: var(--surface);
+  border: 1px solid var(--stone); color: var(--blue); padding: 8px 18px; border-radius: 99px;
+  font-size: 13px; font-weight: 700; margin-bottom: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+
+.auth-title {
+  font-family: 'Tajawal', sans-serif;
+  font-size: clamp(2.5rem, 4vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.5; 
+  color: var(--ink);
+  margin-bottom: 20px;
+}
+.auth-title span { color: var(--blue); position: relative; display: inline-block; }
+.auth-title span::after { content: ''; position: absolute; bottom: 2px; left: 0; right: 0; height: 4px; background: var(--blue); border-radius: 2px; opacity: 0.2; }
+
+.auth-subtitle { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 45px; }
+
+.feature-list { display: flex; flex-direction: column; gap: 30px; }
+.feature-item { display: flex; align-items: flex-start; gap: 15px; text-align: start; }
+.feature-icon {
+  width: 50px; height: 50px; min-width: 50px; border-radius: 14px; background: var(--surface);
+  border: 1px solid var(--stone); display: flex; align-items: center; justify-content: center; color: var(--blue);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+}
+.feature-text h4 { font-size: 17px; font-weight: 800; color: var(--ink); margin-bottom: 6px; }
+.feature-text p { font-size: 14px; color: var(--muted); line-height: 1.5; }
+
+
+/* ════════════════════════════════════
+   FOOTER (الخاص بصفحة تسجيل الدخول)
+════════════════════════════════════ */
+.login-modern-footer {
+  width: 100%;
+  padding-top: 25px;
+  margin-top: auto;
+  border-top: 1px solid var(--stone);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-line {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 500;
+}
+.dot-divider {
+  color: var(--stone);
+  font-size: 10px;
+}
+
+
+/* ════════════════════════════════════
+   MOBILE MENU & RESPONSIVE
+════════════════════════════════════ */
+@media (max-width: 968px) {
+  .auth-main { 
+    flex-direction: column; /* الفورم فوق، والترحيب تحت */
+  }
+  .auth-left-panel { 
+    display: flex; /* إرجاع القسم اللي كان يختفي */
+    padding: 60px 5% 80px; 
+  }
+  .auth-right-panel { 
+    padding-top: 120px; 
+  }
+  .sr-nav { display: none; }
+  .sr-hamburger-btn { display: flex; }
+  .form-row { flex-direction: column; gap: 0; }
+}
+
+/* =========================
+   🌙 DARK MODE - LOGIN
+========================= */
+
+body.dark {
+  --bg-color: #0f172a;
+  --surface: #1e293b;
+  --stone: #334155;
+  --ink: #f1f5f9;
+  --ink2: #cbd5e1;
+  --muted: #94a3b8;
+  --sky: #0f172a; /* Darken the left panel slightly */
+}
+
+body.dark .auth-right-panel {
+  background: var(--bg-color);
+}
+
+body.dark .auth-left-panel {
+  background: #111827;
+}
+
+body.dark .auth-left-panel::before {
+  background: radial-gradient(circle, rgba(0, 113, 227, 0.15) 0%, transparent 70%);
+}
+
+body.dark .tab-btn {
+  color: var(--muted);
+}
+body.dark .tab-btn.active {
+  background: var(--surface);
+  color: var(--blue);
+}
+
+body.dark .btn-social {
+  background: var(--surface);
+  border-color: var(--stone);
+  color: var(--ink);
+}
+
+body.dark .input-group input, 
+body.dark .input-group select {
+  background: var(--surface);
+  color: var(--ink);
+  border-color: var(--stone);
+}
+
+body.dark .input-group input:focus, 
+body.dark .input-group select:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.2);
+}
+
+body.dark .feature-icon {
+  background: var(--surface);
+  border-color: var(--stone);
+}
