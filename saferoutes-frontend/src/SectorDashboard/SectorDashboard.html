@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SafeRoute - Sector Dashboard</title>
+  <link rel="stylesheet" href="sectordashboard.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <img src="logo.png" alt="SafeRoute Logo" class="site-logo" />
+      <div class="logo-text">
+        <h1>SafeRoute</h1>
+        <p id="sectorSubtitle">لوحة تحكم القطاع</p>
+      </div>
+    </div>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة">
+      ☰
+    </button>
+
+    <nav class="nav" id="navMenu">
+      <a href="../SectorDashboard/SectorDashboard.html">لوحة التحكم</a>
+      <a href="../AnalyticsDashboard/AnalyticsDashboard.html">الإحصائيات</a>
+      <a href="../Login-Register/Login.html" id="logoutLink">تسجيل الخروج</a>
+    </nav>
+  </header>
+
+  <main class="dashboard-main">
+    <section class="dashboard-top">
+      <span class="page-badge">لوحة موحدة للقطاع</span>
+      <h2 id="sectorTitle">إدارة البلاغات واتخاذ القرار</h2>
+      <p>
+        تعرض هذه الصفحة البلاغات الخاصة بالقطاع المسجل دخوله، مع مؤشرات سريعة،
+        وفلترة للحالات، وإدارة مباشرة لكل بلاغ.
+      </p>
+    </section>
+
+    <section class="stats-grid">
+      <div class="stat-card">
+        <h3 id="totalReportsCount">0</h3>
+        <p>إجمالي البلاغات</p>
+      </div>
+
+      <div class="stat-card">
+        <h3 id="newReportsCount">0</h3>
+        <p>بلاغات جديدة</p>
+      </div>
+
+      <div class="stat-card">
+        <h3 id="processingReportsCount">0</h3>
+        <p>قيد المعالجة</p>
+      </div>
+
+      <div class="stat-card">
+        <h3 id="resolvedReportsCount">0</h3>
+        <p>تم الحل</p>
+      </div>
+
+      <div class="stat-card">
+        <h3 id="rejectedReportsCount">0</h3>
+        <p>مرفوضة</p>
+      </div>
+
+      <div class="stat-card">
+        <h3 id="avgProcessingTime">2.4 يوم</h3>
+        <p>متوسط زمن المعالجة</p>
+      </div>
+    </section>
+
+    <section class="dashboard-controls">
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">الكل</button>
+        <button class="filter-btn" data-filter="new">جديد</button>
+        <button class="filter-btn" data-filter="review">قيد المراجعة</button>
+        <button class="filter-btn" data-filter="processing">قيد المعالجة</button>
+        <button class="filter-btn" data-filter="resolved">تم الحل</button>
+        <button class="filter-btn" data-filter="rejected">مرفوض</button>
+      </div>
+
+      <button class="analytics-btn" id="analyticsBtn">عرض الإحصائيات</button>
+    </section>
+
+    <section class="reports-table-section">
+      <div class="table-wrapper">
+        <table class="reports-table">
+          <thead>
+            <tr>
+              <th>رقم البلاغ</th>
+              <th>العنوان</th>
+              <th>المدينة</th>
+              <th>النوع</th>
+              <th>الأولوية</th>
+              <th>الحالة</th>
+              <th>الموظف / الفريق</th>
+              <th>الملاحظات</th>
+              <th>التاريخ</th>
+              <th>الإجراءات</th>
+            </tr>
+          </thead>
+          <tbody id="reportsTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>
+      <h3>SafeRoute</h3>
+      <p>لوحة موحدة لإدارة بلاغات القطاع واتخاذ القرار.</p>
+    </div>
+    <div>
+      <p>© 2026 جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+
+  <script src="sectordashboard.js"></script>
+</body>
+</html>

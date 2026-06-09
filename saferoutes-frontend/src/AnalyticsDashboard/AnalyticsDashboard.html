@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تحليلات SafeRoute</title>
+  <link rel="stylesheet" href="analyticsdashboard.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <img src="logo.png" alt="شعار SafeRoute" class="site-logo" />
+      <div class="logo-text">
+        <h1>SafeRoute</h1>
+        <p>لوحة تحكم ذكية لسلامة الطرق</p>
+      </div>
+    </div>
+
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+    <nav class="nav" id="navMenu">
+      <a href="#overview">نظرة عامة</a>
+      <a href="#statistics">الإحصائيات</a>
+      <a href="#performance">الأداء</a>
+      <a href="#hotspots">المناطق الخطرة</a>
+      <a href="#reports">التقارير</a>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main class="analytics-main">
+
+    <!-- Top Section -->
+    <section class="analytics-top" id="overview">
+      <span class="page-badge">لوحة تحكم SafeRoute</span>
+
+      <div class="hero-logo">
+        <img src="logo.png" alt="شعار SafeRoute" class="hero-logo-img" />
+      </div>
+
+      <h2>تحليلات سلامة الطرق</h2>
+      <p>
+        راقب الحوادث والمناطق الخطرة وأداء المسارات من خلال لوحة تحكم
+        حديثة ونظيفة وسهلة الاستخدام، مصممة خصيصًا لمنصة SafeRoute.
+      </p>
+    </section>
+
+    <!-- KPI Cards -->
+    <section class="kpi-grid" id="statistics">
+      <div class="kpi-card">
+        <h3>128</h3>
+        <p>إجمالي الحوادث المبلغ عنها</p>
+      </div>
+
+      <div class="kpi-card">
+        <h3>42</h3>
+        <p>المناطق عالية الخطورة</p>
+      </div>
+
+      <div class="kpi-card">
+        <h3>87%</h3>
+        <p>دقة المسارات</p>
+      </div>
+
+      <div class="kpi-card">
+        <h3>24/7</h3>
+        <p>مراقبة النظام</p>
+      </div>
+    </section>
+
+    <!-- Charts -->
+    <section class="charts-grid" id="performance">
+      <div class="chart-card">
+        <h3>توزيع الحوادث</h3>
+
+        <div class="fake-chart">
+          <div class="bar-item">
+            <span>عمّان</span>
+            <div class="bar"><div class="fill" style="width: 82%;"></div></div>
+          </div>
+
+          <div class="bar-item">
+            <span>الزرقاء</span>
+            <div class="bar"><div class="fill" style="width: 65%;"></div></div>
+          </div>
+
+          <div class="bar-item">
+            <span>إربد</span>
+            <div class="bar"><div class="fill" style="width: 48%;"></div></div>
+          </div>
+
+          <div class="bar-item">
+            <span>العقبة</span>
+            <div class="bar"><div class="fill" style="width: 30%;"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart-card">
+        <h3>أداء المسارات</h3>
+
+        <div class="performance-list">
+          <div class="performance-item">
+            <span>المسار الرئيسي السريع</span>
+            <strong>ممتاز</strong>
+          </div>
+
+          <div class="performance-item">
+            <span>مسار وسط المدينة</span>
+            <strong>جيد</strong>
+          </div>
+
+          <div class="performance-item">
+            <span>الطريق الدائري الشمالي</span>
+            <strong>متوسط</strong>
+          </div>
+
+          <div class="performance-item">
+            <span>مسار المنطقة الصناعية</span>
+            <strong>بحاجة لمراجعة</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hotspots -->
+    <section class="hotspots-section" id="hotspots">
+      <div class="list-card">
+        <h3>أكثر المناطق خطورة</h3>
+        <ul>
+          <li>الدوار السابع - ازدحام شديد وحوادث متكررة</li>
+          <li>طريق المطار - حوادث سرعة خلال أوقات الذروة</li>
+          <li>تقاطع وسط البلد - خطورة عالية على المشاة</li>
+          <li>شارع الجامعة - مناطق عبور غير آمنة</li>
+        </ul>
+      </div>
+
+      <div class="list-card" id="reports">
+        <h3>الإجراءات المقترحة</h3>
+        <ul>
+          <li>تحسين الإشارات المرورية في التقاطعات الحرجة</li>
+          <li>زيادة كاميرات المراقبة الذكية</li>
+          <li>تعزيز سلامة ممرات المشاة</li>
+          <li>تحسين مسارات الاستجابة للطوارئ</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2026 SafeRoute. جميع الحقوق محفوظة.</p>
+    <p>مصمم من أجل رحلة أكثر أمانًا وذكاءً.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navMenu").classList.toggle("show");
+    }
+  </script>
+
+</body>
+</html>
